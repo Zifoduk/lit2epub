@@ -1,0 +1,11 @@
+services:
+  lit2epub:
+    build: .
+    container_name: lit2epub
+    restart: unless-stopped
+    volumes:
+      - ./books:/data/books
+    environment:
+      - WATCH_DIR=/data/books
+      - SCAN_INTERVAL=30
+      - STABLE_SECONDS=2
